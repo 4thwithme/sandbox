@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres-container
+    restart: on-failure
+    environment:
+      - POSTGRES_DB=sandbox
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - pg:/Users/andreyp/Documents/repo/sandbox/data/pg
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-container
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=postgres@postgres.com
+      - PGADMIN_DEFAULT_PASSWORD=postgres
+    ports:
+      - '5555:80'
+    depends_on:
+      - postgres
+
+
+volumes:
+  pg:
