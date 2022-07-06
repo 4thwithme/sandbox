@@ -1,5 +1,5 @@
-import { config } from '../configs/app-creator.config';
-import { DBConfigKeys } from '../enums/db-config-keys.enum';
+import { DBConfigKeys } from '@enums/db-config-keys.enum';
+import { config } from '@configs/app-creator.config';
 
 const DB_DIALECT = config.get(DBConfigKeys.DB_DIALECT);
 const DB_DATABASE = config.get(DBConfigKeys.DB_DATABASE);

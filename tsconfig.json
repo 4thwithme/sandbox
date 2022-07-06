@@ -1,8 +1,12 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "module": "commonjs",
+    "allowJs": false,
+    "noUnusedLocals": true,
     "declaration": true,
     "removeComments": true,
+    "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
@@ -16,6 +20,27 @@
     "noImplicitAny": true,
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": false
-  }
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@modules/*": ["./src/server/modules/*"],
+      "@models/*": ["./src/server/models/*"],
+      "@utils/*": ["src/server/utils/*"],
+      "@guards/*": ["./src/server/guards/*"],
+      "@constants/*": ["./src/server/constants/*"],
+      "@configs/*": ["src/server/configs/*"],
+      "@enums/*": ["./src/server/enums/*"],
+      "@interfaces/*": ["./src/server/interfaces/*"],
+      "@secrets/*": ["./src/server/secrets/*"],
+      "@validators/*": ["./src/server/validators/*"]
+    },
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node"],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "noEmit": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

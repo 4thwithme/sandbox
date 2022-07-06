@@ -1,9 +1,8 @@
 import { createProfiguration } from '@golevelup/profiguration';
 
-import { IServerConfig } from '../interfaces/app-config.interface';
-import { ConfigKeys } from '../enums/app-config-keys.enum';
-import { DBConfigKeys } from '../enums/db-config-keys.enum';
-import { Environment } from '../enums/environment.enum';
+import { ConfigKeys } from '@enums/app-config-keys.enum';
+import { DBConfigKeys } from '@enums/db-config-keys.enum';
+import { IServerConfig } from '@interfaces/app-config.interface';
 import {
   DEFAULT_SERVER_PORT,
   DEFAULT_GLOBAL_PREFIX,
@@ -16,7 +15,14 @@ import {
   DEFAULT_DB_AUTO_LOAD_MODELS,
   DEFAULT_SWAGGER_ROUTE,
   DEFAULT_DB_SYNCHRONIZE_MODELS,
-} from '../constants/default-app-config.const';
+  DEFAULT_SESSION_SECRET,
+  DEFAULT_SESSION_RESAVE,
+  DEFAULT_SESSION_SAVE_UNINIT,
+  DEFAULT_COOKIE_SECURE,
+  DEFAULT_COOKIE_HTTP_ONLY,
+  DEFAULT_COOKIE_MAX_AGE,
+} from '@constants/default-app-config.const';
+import { Environment } from '@enums/environment.enum';
 
 export const config = createProfiguration<IServerConfig>(
   {
@@ -40,6 +46,41 @@ export const config = createProfiguration<IServerConfig>(
       default: DEFAULT_SWAGGER_ROUTE,
       env: ConfigKeys.SWAGGER_ROUTE,
     },
+
+    //session
+    [ConfigKeys.SESSION_SECRET]: {
+      format: String,
+      default: DEFAULT_SESSION_SECRET,
+      env: ConfigKeys.SESSION_SECRET,
+    },
+    [ConfigKeys.SESSION_SAVE_UNINIT]: {
+      format: Boolean,
+      default: DEFAULT_SESSION_SAVE_UNINIT,
+      env: ConfigKeys.SESSION_SAVE_UNINIT,
+    },
+    [ConfigKeys.SESSION_RESAVE]: {
+      format: Boolean,
+      default: DEFAULT_SESSION_RESAVE,
+      env: ConfigKeys.SESSION_RESAVE,
+    },
+
+    // cookie
+    [ConfigKeys.COOKIE_SECURE]: {
+      format: Boolean,
+      default: DEFAULT_COOKIE_SECURE,
+      env: ConfigKeys.COOKIE_SECURE,
+    },
+    [ConfigKeys.COOKIE_HTTP_ONLY]: {
+      format: Boolean,
+      default: DEFAULT_COOKIE_HTTP_ONLY,
+      env: ConfigKeys.COOKIE_HTTP_ONLY,
+    },
+    [ConfigKeys.COOKIE_MAX_AGE]: {
+      format: Number,
+      default: DEFAULT_COOKIE_MAX_AGE,
+      env: ConfigKeys.COOKIE_MAX_AGE,
+    },
+
     // DB
     [DBConfigKeys.DB_DIALECT]: {
       default: DEFAULT_DB_DIALECT,

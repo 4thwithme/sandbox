@@ -2,8 +2,13 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 
-import { configValidationSchema } from '../../validators/app-config.validator';
-import { dbConfig } from '../../configs/db-connect.config';
+import { dbConfig } from '@configs/db-connect.config';
+import { configValidationSchema } from '@validators/app-config.validator';
+
+import { UserModule } from '@modules/user/user.module';
+import { AuthModule } from '@modules/auth/auth.module';
+
+import { UserModel } from '@models/user.model';
 
 @Module({
   imports: [
@@ -13,8 +18,10 @@ import { dbConfig } from '../../configs/db-connect.config';
     }),
     SequelizeModule.forRoot({
       ...dbConfig,
-      models: [],
+      models: [UserModel],
     }),
+    UserModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],

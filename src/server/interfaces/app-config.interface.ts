@@ -1,4 +1,4 @@
-import { Environment } from '../enums/environment.enum';
+import { Environment } from '@enums//environment.enum';
 
 export interface IServerConfig {
   SERVER_PORT: number;
@@ -13,4 +13,10 @@ export interface IServerConfig {
   DB_AUTO_LOAD_MODELS: boolean;
   SWAGGER_ROUTE: string;
   DB_SYNCHRONIZE_MODELS: boolean;
+  SESSION_SECRET: string;
+  SESSION_RESAVE: boolean;
+  SESSION_SAVE_UNINIT: boolean;
+  COOKIE_SECURE: boolean;
+  COOKIE_HTTP_ONLY: boolean;
+  COOKIE_MAX_AGE: number;
 }

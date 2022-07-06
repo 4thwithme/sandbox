@@ -1,8 +1,8 @@
 import * as Joi from 'joi';
 
-import { ConfigKeys } from '../enums/app-config-keys.enum';
-import { DBConfigKeys } from '../enums/db-config-keys.enum';
-import { EnvironmentValues } from '../enums/environment.enum';
+import { ConfigKeys } from '@enums/app-config-keys.enum';
+import { DBConfigKeys } from '@enums/db-config-keys.enum';
+import { EnvironmentValues } from '@enums/environment.enum';
 
 export const configValidationSchema = Joi.object({
   // SERVER
