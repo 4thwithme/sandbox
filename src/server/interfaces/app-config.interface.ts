@@ -19,4 +19,5 @@ export interface IServerConfig {
   COOKIE_SECURE: boolean;
   COOKIE_HTTP_ONLY: boolean;
   COOKIE_MAX_AGE: number;
+  USER_PASS_SALT: string;
 }

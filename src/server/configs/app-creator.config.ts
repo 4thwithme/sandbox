@@ -21,6 +21,7 @@ import {
   DEFAULT_COOKIE_SECURE,
   DEFAULT_COOKIE_HTTP_ONLY,
   DEFAULT_COOKIE_MAX_AGE,
+  DEFAULT_USER_PASS_SALT,
 } from '@constants/default-app-config.const';
 import { Environment } from '@enums/environment.enum';
 
@@ -121,6 +122,13 @@ export const config = createProfiguration<IServerConfig>(
       default: DEFAULT_DB_SYNCHRONIZE_MODELS,
       format: Boolean,
       env: DBConfigKeys.DB_SYNCHRONIZE_MODELS,
+    },
+
+    // SALT
+    [ConfigKeys.USER_PASS_SALT]: {
+      format: String,
+      default: DEFAULT_USER_PASS_SALT,
+      env: ConfigKeys.USER_PASS_SALT,
     },
   },
   {

@@ -18,3 +18,5 @@ export const DEFAULT_DB_PASSWORD = 'pass';
 export const DEFAULT_DB_DATABASE = 'postgres';
 export const DEFAULT_DB_AUTO_LOAD_MODELS = true;
 export const DEFAULT_DB_SYNCHRONIZE_MODELS = true;
+
+export const DEFAULT_USER_PASS_SALT = 'salt';

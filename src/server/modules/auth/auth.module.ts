@@ -8,8 +8,8 @@ import { LocalStrategy } from './local.strategy';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 @Module({
-  controllers: [AuthController],
   imports: [UserModule, PassportModule.register({ session: true })],
+  controllers: [AuthController],
   providers: [AuthService, LocalStrategy, SessionSerializer],
 })
 export class AuthModule {}
