@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "jsx": "preserve",
     "module": "commonjs",
     "allowJs": false,
     "noUnusedLocals": true,
@@ -35,8 +34,7 @@
     },
     "typeRoots": ["./node_modules/@types"],
     "types": ["node"],
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "noEmit": true,
+    // "noEmit": true, do not uncomment it !Ya suka vsiu noch iz-za etoy zalupi ne spal
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true

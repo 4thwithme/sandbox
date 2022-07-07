@@ -1,11 +1,11 @@
 import { hash } from 'bcrypt';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
+import { userPassSalt } from '@secrets/bcrypt';
 
 import { UserModel } from '@models/user.model';
 import { USER_ID, USER_PASSWORD, USER_USERNAME } from '@constants/user.const';
 import { USER_WAS_NOT_CREATED_ERROR_TEXT } from '@constants/errors.const';
-import { userPassSalt } from '@secrets/brypt';
 
 import {
   CreateUserBodyDTO,
