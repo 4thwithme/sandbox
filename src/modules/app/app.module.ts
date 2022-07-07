@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 
-import { dbConfig } from '@configs/db-connect.config';
+import { dbConfig } from 'src/configs/db-connect.config';
 import { configValidationSchema } from '@validators/app-config.validator';
 
 import { UserModule } from '@modules/user/user.module';
