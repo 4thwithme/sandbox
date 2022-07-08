@@ -22,16 +22,18 @@
     "noFallthroughCasesInSwitch": false,
     "esModuleInterop": true,
     "paths": {
-      "@modules/*": ["./src/modules/*"],
-      "@models/*": ["./src/models/*"],
-      "@utils/*": ["src/utils/*"],
-      "@guards/*": ["./src/guards/*"],
-      "@constants/*": ["./src/constants/*"],
-      "@configs/*": ["src/configs/*"],
-      "@enums/*": ["./src/enums/*"],
-      "@interfaces/*": ["./src/interfaces/*"],
-      "@secrets/*": ["./src/secrets/*"],
-      "@validators/*": ["./src/validators/*"]
+      "@modules/*": ["./src/server/modules/*"],
+      "@models/*": ["./src/server/models/*"],
+      "@utils/*": ["./src/server/utils/*"],
+      "@guards/*": ["./src/server/guards/*"],
+      "@constants/*": ["./src/server/constants/*"],
+      "@configs/*": ["./src/server/configs/*"],
+      "@enums/*": ["./src/server/enums/*"],
+      "@interfaces/*": ["./src/server/interfaces/*"],
+      "@secrets/*": ["./src/server/secrets/*"],
+      "@validators/*": ["./src/server/validators/*"]
     }
-  }
+  },
+  "include": ["src/server/**/*.ts"],
+  "exclude": ["src/client"]
 }

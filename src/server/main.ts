@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import session from 'express-session';
 import passport from 'passport';
 
-import { config } from 'src/configs/app-creator.config';
+import { config } from '@configs/app-creator.config';
 import { ConfigKeys } from '@enums/app-config-keys.enum';
 import { AppModule } from '@modules/app/app.module';
 
