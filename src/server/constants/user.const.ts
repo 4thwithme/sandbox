@@ -1,5 +1,11 @@
+import { config } from '@configs/app-creator.config';
+import { ConfigKeys } from '@enums/app-config-keys.enum';
+
+const GLOBAL_PREFIX = config.get(ConfigKeys.GLOBAL_PREFIX);
+
+export const USER_ROUTE = `${GLOBAL_PREFIX}/user`;
+
 export const USER_DB_NAME = 'user';
-export const USER_ROUTE = 'user';
 export const GET_USER_PARAM = ':id';
 
 export const USER_ID = 'id';

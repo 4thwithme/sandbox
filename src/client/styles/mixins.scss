@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+@mixin input {
+  margin-top: 30px;
+  padding: 10px 0px;
+  font-size: 24px;
+  width: 300px;
+  border-bottom: solid 1px $black;
+  color: $black;
+  font-family: $ff;
+  font-weight: 200;
+
+  &:hover {
+    border-bottom: solid 1px $black-hover;
+  }
+}
+
+@mixin btn {
+  color: $black;
+  border: solid 1px $black;
+  font-size: 24px;
+  height: 60px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 30px;
+  font-family: $ff;
+  font-weight: 200;
+
+  &:hover {
+    color: $black-hover;
+    border: solid 1px $black-hover;
+  }
+}

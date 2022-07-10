@@ -7,6 +7,7 @@ import { SessionSerializer } from '@utils/session-serializer.util';
 import { LocalStrategy } from './local.strategy';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
+
 @Module({
   imports: [UserModule, PassportModule.register({ session: true })],
   controllers: [AuthController],

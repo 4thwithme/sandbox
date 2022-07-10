@@ -1,5 +1,3 @@
-import next from 'next';
-import { RenderModule } from 'nest-next';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
@@ -7,12 +5,11 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { dbConfig } from '@configs/db-connect.config';
 import { configValidationSchema } from '@validators/app-config.validator';
 
+import { RenderViewsModule } from '@modules/render/render.module';
 import { UserModule } from '@modules/user/user.module';
 import { AuthModule } from '@modules/auth/auth.module';
 
 import { UserModel } from '@models/user.model';
-import { AppController } from './app.controller';
-// import { resolve } from 'path';
 
 @Module({
   imports: [
@@ -24,17 +21,11 @@ import { AppController } from './app.controller';
       ...dbConfig,
       models: [UserModel],
     }),
-    RenderModule.forRootAsync(
-      next({
-        dev: process.env.NODE_ENV !== 'production',
-        dir: 'src/client',
-      }),
-      { viewsDir: '' },
-    ),
+    RenderViewsModule,
     UserModule,
     AuthModule,
   ],
-  controllers: [AppController],
+  controllers: [],
   providers: [],
 })
 export class AppModule {}

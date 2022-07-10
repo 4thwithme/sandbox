@@ -1,22 +1,14 @@
 import React from 'react';
-import { NextPage, NextPageContext } from 'next';
+import { NextPage } from 'next';
+
+import Layout from '../components/layout';
 
 type PageProps = {
   title: string;
 };
 
-type PageContext = NextPageContext & {
-  query: PageProps;
-};
-
-const Home: NextPage<PageProps> = ({ title }) => {
-  return <div>Home, {title}</div>;
-};
-
-Home.getInitialProps = ({ query }: PageContext): PageProps => {
-  return {
-    title: query.title,
-  };
+const Home: NextPage<PageProps> = () => {
+  return <Layout>Home!</Layout>;
 };
 
 export default Home;

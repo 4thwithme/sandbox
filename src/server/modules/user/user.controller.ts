@@ -5,12 +5,9 @@ import {
   HttpStatus,
   Param,
   Query,
-  Request,
-  UseGuards,
 } from '@nestjs/common';
 
 import { GET_USER_PARAM, USER_ROUTE } from '@constants/user.const';
-import { AuthenticatedGuard } from '@guards/authenticated.guard';
 
 import { UserService } from './user.service';
 import {
@@ -31,12 +28,6 @@ export class UserController {
   ): Promise<getUserByUsernameResponseDTO> {
     const res = await this.userService.getUserByUsername(query);
     return res;
-  }
-  // temp
-  @UseGuards(AuthenticatedGuard)
-  @Get('/protected')
-  getHello(@Request() req: any): any {
-    return req.user;
   }
 
   @Get(GET_USER_PARAM)

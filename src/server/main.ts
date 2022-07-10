@@ -7,7 +7,6 @@ import { ConfigKeys } from '@enums/app-config-keys.enum';
 import { AppModule } from '@modules/app/app.module';
 
 const PORT = config.get(ConfigKeys.SERVER_PORT);
-const GLOBAL_PREFIX = config.get(ConfigKeys.GLOBAL_PREFIX);
 const SESSION_SECRET = config.get(ConfigKeys.SESSION_SECRET);
 const SESSION_RESAVE = config.get(ConfigKeys.SESSION_RESAVE);
 const SESSION_SAVE_UNINIT = config.get(ConfigKeys.SESSION_SAVE_UNINIT);
@@ -33,7 +32,6 @@ const COOKIE_MAX_AGE = config.get(ConfigKeys.COOKIE_MAX_AGE);
 
   app.use(passport.initialize());
   app.use(passport.session());
-  app.setGlobalPrefix(GLOBAL_PREFIX);
 
   await app.listen(PORT);
 })();

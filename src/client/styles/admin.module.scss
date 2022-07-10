@@ -1,0 +1,21 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.username {
+  @include input;
+}
+
+.password {
+  @include input;
+}
+
+.loginBtn {
+  @include btn;
+}
