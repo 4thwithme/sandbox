@@ -18,8 +18,6 @@ import {
   DEFAULT_SESSION_SECRET,
   DEFAULT_SESSION_RESAVE,
   DEFAULT_SESSION_SAVE_UNINIT,
-  DEFAULT_COOKIE_SECURE,
-  DEFAULT_COOKIE_HTTP_ONLY,
   DEFAULT_COOKIE_MAX_AGE,
   DEFAULT_USER_PASS_SALT,
 } from '@constants/default-app-config.const';
@@ -66,16 +64,6 @@ export const config = createProfiguration<IServerConfig>(
     },
 
     // cookie
-    [ConfigKeys.COOKIE_SECURE]: {
-      format: Boolean,
-      default: DEFAULT_COOKIE_SECURE,
-      env: ConfigKeys.COOKIE_SECURE,
-    },
-    [ConfigKeys.COOKIE_HTTP_ONLY]: {
-      format: Boolean,
-      default: DEFAULT_COOKIE_HTTP_ONLY,
-      env: ConfigKeys.COOKIE_HTTP_ONLY,
-    },
     [ConfigKeys.COOKIE_MAX_AGE]: {
       format: Number,
       default: DEFAULT_COOKIE_MAX_AGE,

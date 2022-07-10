@@ -16,8 +16,6 @@ export interface IServerConfig {
   SESSION_SECRET: string;
   SESSION_RESAVE: boolean;
   SESSION_SAVE_UNINIT: boolean;
-  COOKIE_SECURE: boolean;
-  COOKIE_HTTP_ONLY: boolean;
   COOKIE_MAX_AGE: number;
   USER_PASS_SALT: string;
 }

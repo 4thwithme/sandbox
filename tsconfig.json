@@ -31,9 +31,10 @@
       "@enums/*": ["./src/server/enums/*"],
       "@interfaces/*": ["./src/server/interfaces/*"],
       "@secrets/*": ["./src/server/secrets/*"],
-      "@validators/*": ["./src/server/validators/*"]
+      "@validators/*": ["./src/server/validators/*"],
+      "@shared/*": ["./src/shared/*"]
     }
   },
-  "include": ["src/server/**/*.ts"],
+  "include": ["src/server/**/*.ts", "src/shared/**/*.ts"],
   "exclude": ["src/client"]
 }

@@ -1,16 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { PassportSerializer } from '@nestjs/passport';
 
+import { IUser } from '@interfaces/user.interface';
+import { UserService } from '@modules/user/user.service';
+import { USER_ID } from '@constants/user.const';
+
 @Injectable()
 export class SessionSerializer extends PassportSerializer {
-  serializeUser(user: any, cb: (err: Error | null, user: any) => void): void {
-    cb(null, user);
+  constructor(private readonly usersService: UserService) {
+    super();
   }
 
-  deserializeUser(
-    data: any,
-    done: (err: Error | null, data: string) => void,
-  ): void {
-    done(null, data);
+  serializeUser(user: IUser, done: CallableFunction): void {
+    done(null, user.id);
+  }
+
+  async deserializeUser(userId: string, done: CallableFunction): Promise<void> {
+    const user = await this.usersService.getUserById({
+      [USER_ID]: Number(userId),
+    });
+    done(null, user);
   }
 }

@@ -15,10 +15,7 @@ const NODE_ENV = config.get(ConfigKeys.NODE_ENV);
 @Module({
   imports: [
     RenderModule.forRootAsync(
-      next({
-        dev: NODE_ENV !== Environment.production,
-        dir: NEXT_DIR_PATH,
-      }),
+      next({ dev: NODE_ENV !== Environment.production, dir: NEXT_DIR_PATH }),
       { viewsDir: '' },
     ),
   ],

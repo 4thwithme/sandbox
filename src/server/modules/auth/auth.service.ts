@@ -45,6 +45,10 @@ export class AuthService {
   }
 
   closeSession(params: logoutRequestDTO): void {
-    params.session.destroy(() => null);
+    params.session.destroy((err) => {
+      if (err) {
+        console.error(err);
+      }
+    });
   }
 }
