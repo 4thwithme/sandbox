@@ -13,6 +13,19 @@
   &:hover {
     border-bottom: solid 1px $black-hover;
   }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:first-line {
+    border-bottom: solid 1px $black;
+    -webkit-text-fill-color: $black;
+    -webkit-text-fill-size: 24px !important;
+    -webkit-box-shadow: 0 0 0px 1000px $bg inset;
+    font-size: 24px !important;
+    font-family: $ff !important;
+    background-color: $bg !important;
+  }
 }
 
 @mixin btn {

@@ -15,6 +15,7 @@ import {
 } from '@constants/auth.const';
 import { UserService } from '@modules/user/user.service';
 import { LocalAuthGuard } from '@guards/local.auth.guard';
+import { AdminGuard } from '@guards/admin.guard';
 
 import { AuthService } from './auth.service';
 import { CreateUserBodyDTO } from '../user/user.dto';
@@ -40,7 +41,7 @@ export class AuthController {
     return HttpStatus.CREATED;
   }
 
-  @UseGuards(LocalAuthGuard)
+  @UseGuards(LocalAuthGuard, AdminGuard)
   @HttpCode(HttpStatus.OK)
   @Post(AUTH_LOGIN_ROUTE)
   login(@Request() req: loginRequestDTO): loginPesponseDTO {

@@ -1,9 +1,10 @@
 import { Controller, Get, Render, UseGuards } from '@nestjs/common';
 
 import { AuthenticatedGuard } from '@guards/authenticated.guard';
+import { AdminGuard } from '@guards/admin.guard';
 import {
-  ADMIN_LOGIN_COMPONENT,
-  ADMIN_LOGIN_ROUTE,
+  LOGIN_COMPONENT,
+  LOGIN_ROUTE,
   DASHBOARD_COMPONENT,
   DASHBOARD_ROUTE,
   HOME_COMPONENT,
@@ -17,13 +18,13 @@ export class RenderController {
     return {};
   }
 
-  @Get(ADMIN_LOGIN_ROUTE)
-  @Render(ADMIN_LOGIN_COMPONENT)
+  @Get(LOGIN_ROUTE)
+  @Render(LOGIN_COMPONENT)
   public adminka() {
     return {};
   }
 
-  @UseGuards(AuthenticatedGuard)
+  @UseGuards(AuthenticatedGuard, AdminGuard)
   @Get(DASHBOARD_ROUTE)
   @Render(DASHBOARD_COMPONENT)
   public dashboard() {

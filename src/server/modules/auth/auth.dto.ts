@@ -17,7 +17,8 @@ export interface loginRequestDTO {
   readonly user: IUser;
 }
 
-export type loginPesponseDTO = IUser;
+export type loginPesponseDTO = getSessionUserDTO;
+export type getSessionUserDTO = IUser;
 
 export interface logoutRequestDTO {
   readonly session: Session;

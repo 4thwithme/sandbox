@@ -11,7 +11,7 @@ import {
 import {
   AuthUserDTO,
   AuthUserResponseDTO,
-  loginPesponseDTO,
+  getSessionUserDTO,
   loginRequestDTO,
   logoutRequestDTO,
 } from './auth.dto';
@@ -40,7 +40,7 @@ export class AuthService {
     return result;
   }
 
-  getSessionUser(params: loginRequestDTO): loginPesponseDTO {
+  getSessionUser(params: loginRequestDTO): getSessionUserDTO {
     return params.user;
   }
 
