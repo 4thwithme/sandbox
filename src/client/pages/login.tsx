@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
+import { IncomingMessage } from 'http';
+import { useRouter } from 'next/router';
+import React from 'react';
 import { GetServerSideProps } from 'next';
+import { NextApiRequestCookies } from 'next/dist/server/api-utils';
 
 import Layout from '../components/layout';
 import { CLIENT_DASHBOARD_ROUTE } from '../consts';
 import { POST } from '../utils/fetch.util';
+import { IUser } from '../../shared/interfaces/user.interface';
 
 import cs from '../styles/admin.module.scss';
 
@@ -65,15 +68,17 @@ const Login: NextPage<PageProps> = (): JSX.Element => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<{}> = async ({ req }) => {
-  const user = (req as any).user;
-
+export const getServerSideProps: GetServerSideProps = async ({
+  req: { user },
+}: {
+  req: IncomingMessage & {
+    cookies: NextApiRequestCookies;
+    user?: IUser;
+  };
+}) => {
   if (user) {
     return {
-      redirect: {
-        destination: CLIENT_DASHBOARD_ROUTE,
-        permanent: false,
-      },
+      redirect: { destination: CLIENT_DASHBOARD_ROUTE, permanent: false },
     };
   }
 

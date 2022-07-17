@@ -3,7 +3,6 @@
 1.  add validations
 
 ```
-app.useGlobalPipes(new ValidationPipe({ transform: true }));
+service validations
+service runner
 ```
-
-3. norm front (funcs moves)
