@@ -6,4 +6,4 @@
 app.useGlobalPipes(new ValidationPipe({ transform: true }));
 ```
 
-2. redirects
+3. norm front (funcs moves)

@@ -9,22 +9,10 @@
   color: $black;
   font-family: $ff;
   font-weight: 200;
+  text-transform: lowercase;
 
   &:hover {
     border-bottom: solid 1px $black-hover;
-  }
-
-  &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus,
-  &:-webkit-autofill:first-line {
-    border-bottom: solid 1px $black;
-    -webkit-text-fill-color: $black;
-    -webkit-text-fill-size: 24px !important;
-    -webkit-box-shadow: 0 0 0px 1000px $bg inset;
-    font-size: 24px !important;
-    font-family: $ff !important;
-    background-color: $bg !important;
   }
 }
 
@@ -41,9 +29,51 @@
   margin-top: 30px;
   font-family: $ff;
   font-weight: 200;
+  text-transform: lowercase;
 
   &:hover {
     color: $black-hover;
     border: solid 1px $black-hover;
   }
+}
+
+@mixin link {
+  color: $black;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: $ff;
+  font-weight: 200;
+  text-transform: lowercase;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.7px;
+    width: 100%;
+    background-color: $black;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $black-hover;
+    }
+  }
+
+  &:hover {
+    color: $black-hover;
+
+    &:after {
+      background-color: $black-hover;
+    }
+  }
+}
+
+@mixin text {
+  color: $black;
+  font-size: 24px;
+  font-family: $ff;
+  text-transform: lowercase;
+  font-weight: 200;
 }

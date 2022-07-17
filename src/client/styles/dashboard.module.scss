@@ -1,0 +1,23 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoutBtn {
+  @include link;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 18px;
+}
+
+.loggedInText {
+  @include text;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  font-size: 18px;
+}

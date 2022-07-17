@@ -23,7 +23,10 @@ export class UserService {
 
   async createUser(params: CreateUserBodyDTO): Promise<void> {
     try {
-      const hashedPassword = await hash(params.password, userPassSalt);
+      const hashedPassword = await hash(
+        params.password.toLowerCase(),
+        userPassSalt,
+      );
 
       await this.userSchema.createOne({
         ...params,

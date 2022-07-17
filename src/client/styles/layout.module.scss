@@ -1,10 +1,12 @@
 @import './variables.scss';
+@import './mixins.scss';
 
 .main {
+  @include text;
+
   height: 100vh;
   width: 100vw;
   background-color: $bg;
-  color: $black;
   display: flex;
   align-items: center;
   justify-content: center;

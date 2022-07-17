@@ -3,9 +3,7 @@ import { NextPage } from 'next';
 
 import Layout from '../components/layout';
 
-type PageProps = {
-  title: string;
-};
+type PageProps = {};
 
 const Home: NextPage<PageProps> = () => {
   return <Layout>Home!</Layout>;
