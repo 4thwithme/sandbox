@@ -21,3 +21,11 @@
   top: 10px;
   font-size: 18px;
 }
+
+.role {
+  @include text;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  font-size: 18px;
+}

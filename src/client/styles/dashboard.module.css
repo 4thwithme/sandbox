@@ -1,0 +1,61 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoutBtn {
+  color: #000000;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: "IBM Plex Mono";
+  font-weight: 200;
+  text-transform: lowercase;
+  position: relative;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 18px;
+}
+.logoutBtn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.7px;
+  width: 100%;
+  background-color: #000000;
+  cursor: pointer;
+}
+.logoutBtn:after:hover {
+  background-color: #636363;
+}
+.logoutBtn:hover {
+  color: #636363;
+}
+.logoutBtn:hover:after {
+  background-color: #636363;
+}
+
+.loggedInText {
+  color: #000000;
+  font-size: 24px;
+  font-family: "IBM Plex Mono";
+  text-transform: lowercase;
+  font-weight: 200;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  font-size: 18px;
+}
+
+.role {
+  color: #000000;
+  font-size: 24px;
+  font-family: "IBM Plex Mono";
+  text-transform: lowercase;
+  font-weight: 200;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  font-size: 18px;
+}/*# sourceMappingURL=dashboard.module.css.map */

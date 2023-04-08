@@ -1,0 +1,56 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.username {
+  margin-top: 30px;
+  padding: 10px 0px;
+  font-size: 24px;
+  width: 300px;
+  border-bottom: solid 1px #000000;
+  color: #000000;
+  font-family: "IBM Plex Mono";
+  font-weight: 200;
+  text-transform: lowercase;
+}
+.username:hover {
+  border-bottom: solid 1px #636363;
+}
+
+.password {
+  margin-top: 30px;
+  padding: 10px 0px;
+  font-size: 24px;
+  width: 300px;
+  border-bottom: solid 1px #000000;
+  color: #000000;
+  font-family: "IBM Plex Mono";
+  font-weight: 200;
+  text-transform: lowercase;
+}
+.password:hover {
+  border-bottom: solid 1px #636363;
+}
+
+.loginBtn {
+  color: #000000;
+  border: solid 1px #000000;
+  font-size: 24px;
+  height: 60px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 30px;
+  font-family: "IBM Plex Mono";
+  font-weight: 200;
+  text-transform: lowercase;
+}
+.loginBtn:hover {
+  color: #636363;
+  border: solid 1px #636363;
+}/*# sourceMappingURL=admin.module.css.map */

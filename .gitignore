@@ -39,3 +39,4 @@ data
 /**/secrets/
 /**/.next
 dist
+/**/mdb-queries/

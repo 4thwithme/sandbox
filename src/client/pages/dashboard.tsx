@@ -39,6 +39,7 @@ const Dashboard: NextPage<PageProps> = ({ user: data }): JSX.Element => {
       <Layout className={css.wrapper}>
         <div>Dashboard</div>
         <div className={css.loggedInText}>Logged in as: {user.username}</div>
+        <div className={css.role}>Role: {user.role}</div>
         <button className={css.logoutBtn} onClick={onLogOutClick}>
           LOG OUT
         </button>
